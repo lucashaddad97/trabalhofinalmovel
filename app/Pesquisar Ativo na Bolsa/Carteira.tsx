@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useFocusEffect } from '@react-navigation/native';
 import React, { useCallback, useState } from 'react';
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import SimulacaoHoje from './SimulacaoHoje';
 
 const Tab = createBottomTabNavigator();
@@ -202,3 +202,92 @@ export default function ComprarAcao() {
     </Tab.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "#2B2B2B"
+  },
+
+  saldoBox: {
+    position: "absolute",
+    right: 20,
+    top: 10,
+    alignItems: "flex-end"
+  },
+  saldoTexto: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#FFFFFF"
+  },
+  investidoTexto: {
+    fontSize: 14,
+    color: "#FFFFFF"
+  },
+
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+    marginTop: 40,
+    marginBottom: 20,
+    color: "#FFFFFF"
+  },
+
+  label: {
+    fontSize: 16,
+    marginTop: 10,
+    color: "#FFFFFF"
+  },
+
+  input: {
+    borderWidth: 1,
+    borderColor: "#BBBBBB",
+    padding: 10,
+    borderRadius: 10,
+    marginTop: 5,
+    color: "#FFFFFF"
+  },
+
+  button: {
+    backgroundColor: "#FF9800",
+    marginTop: 20,
+    padding: 14,
+    borderRadius: 12,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOpacity: 0.4,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  buttonText: {
+    color: "#000000",
+    fontWeight: "bold",
+    fontSize: 16
+  },
+
+  resultBox: {
+    marginTop: 20,
+    padding: 15,
+    backgroundColor: "rgba(255,255,255,0.05)",
+    borderRadius: 10
+  },
+  resultText: {
+    fontSize: 18,
+    marginBottom: 5,
+    color: "#FFFFFF"
+  },
+
+  buyButton: {
+    marginTop: 15,
+    backgroundColor: "#4CAF50",
+    padding: 12,
+    borderRadius: 10,
+    alignItems: "center"
+  },
+  buyButtonText: {
+    color: "#FFFFFF",
+    fontWeight: "bold",
+    fontSize: 16
+  }
+});
