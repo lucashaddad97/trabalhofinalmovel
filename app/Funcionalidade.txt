@@ -1,0 +1,6 @@
+1° Tela: Tela principal - Explicando breviamente sobre o app
+2° Tela: Sobre - dizendo mais especificamente sobre o app
+3° tela: Minha carteira - mostra sobre suas açoes que voce possui, possiblidade de vender tambem esta inclusa
+4° tela: movimentações - temos dois bottom tabs (Depositar, Sacar). Depositar - nele voce insere o valor e a forma de dpeosito e clique em depositar. Sacar - nele voce insere o valor que quer sacar e clique em sacar, automaticamente irá para o Pix
+5° tela: Pesquisar ativos - nela temos dois campos, o primeiro voce irá inserir a açao que deseja buscar, no proximo campo o valor que voce quer depositar nessa açao. Logo abaixo irá fornecer mais dados sobre a sua compra (quantidade,valor unitario e nome da empresa)
+6° tela: a mesma pagina Minha carteira, com as mesmas funçoes.
