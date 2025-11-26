@@ -1,3 +1,4 @@
+// SimulacaoHoje.js
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import React, { useCallback, useState } from 'react';
@@ -7,9 +8,10 @@ import {
     Image,
     Platform,
     ScrollView,
+    StyleSheet,
     Text,
     TouchableOpacity,
-    View
+    View,
 } from 'react-native';
 
 function formatCurrency(value) {
@@ -155,6 +157,7 @@ export default function SimulacaoHoje() {
     </ScrollView>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     padding: 20,
