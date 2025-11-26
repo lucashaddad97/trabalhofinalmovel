@@ -1,24 +1,33 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+// app/_layout.tsx
+import { Drawer } from 'expo-router/drawer';
+import React from 'react';
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
-
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
+export default function DrawerLayout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Drawer
+      screenOptions={{
+        headerShown: true,
+      }}
+    >
+      <Drawer.Screen
+        name="index" // app/index.tsx
+        options={{ title: 'Página Principal' }}
+      />
+
+      <Drawer.Screen
+        name="Moedas" // app/moedas/index.tsx → corresponde à pasta "moedas"
+        options={{ title: 'Moedas' }}
+      />
+
+      <Drawer.Screen
+        name="sobre" // app/sobre.tsx
+        options={{ title: 'Sobre' }}
+      />
+      <Drawer.Screen
+        name="Minhacarteira" // app/sobre.tsx
+        options={{ title: 'Minha Carteira' }}
+      />
+    </Drawer>
+
   );
 }
