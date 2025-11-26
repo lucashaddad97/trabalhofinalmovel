@@ -21,13 +21,13 @@ export default function IndexScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1A1A1A',        // fundo cinza escuro
+    backgroundColor: '#1A1A1A',        
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
   },
   card: {
-    backgroundColor: '#2A2A2A',        // cinza médio (contraste)
+    backgroundColor: '#2A2A2A',        
     padding: 25,
     borderRadius: 16,
     width: '95%',
