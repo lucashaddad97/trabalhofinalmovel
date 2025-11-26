@@ -36,3 +36,32 @@ export default function MinhaCarteiraSobre() {
     </ScrollView>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "#2B2B2B"
+  },
+
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+    marginTop: 20,
+    marginBottom: 20,
+    color: "#FFFFFF"
+  },
+
+  resultBox: {
+    marginTop: 10,
+    padding: 15,
+    backgroundColor: "rgba(255,255,255,0.05)",
+    borderRadius: 10
+  },
+
+  resultText: {
+    fontSize: 17,
+    marginBottom: 12,
+    color: "#FFFFFF",
+    lineHeight: 24
+  }
+});
