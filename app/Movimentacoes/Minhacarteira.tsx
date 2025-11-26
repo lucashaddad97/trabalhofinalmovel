@@ -155,3 +155,99 @@ export default function SimulacaoHoje() {
     </ScrollView>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+    backgroundColor: '#2B2B2B',
+    flex: 1,
+  },
+
+  saldoBox: {
+    alignItems: 'flex-end',
+    marginBottom: 20,
+    padding: 12,
+    backgroundColor: 'rgba(255,255,255,0.08)',
+    borderRadius: 12,
+  },
+
+  saldoTexto: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#FFFFFF',
+  },
+
+  investidoTexto: {
+    fontSize: 14,
+    color: '#FFFFFF',
+  },
+
+  titulo: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    marginBottom: 15,
+    color: '#FFFFFF',
+  },
+
+  vazio: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    textAlign: 'center',
+    marginTop: 20,
+  },
+
+  card: {
+    backgroundColor: 'rgba(255,255,255,0.05)',
+    padding: 15,
+    borderRadius: 12,
+    marginBottom: 15,
+    shadowColor: '#000',
+    shadowOpacity: 0.4,
+    shadowRadius: 6,
+    elevation: 6,
+  },
+
+  logo: { width: 48, height: 48, borderRadius: 8, marginRight: 12 },
+
+  nome: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+
+  texto: {
+    color: '#E0E0E0',
+    marginTop: 3,
+    fontSize: 15,
+  },
+
+  total: {
+    marginTop: 10,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+
+  botaoVender: {
+    marginTop: 0,
+    backgroundColor: '#E53935',
+    padding: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+    paddingHorizontal: 18,
+    shadowColor: '#000',
+    shadowOpacity: 0.4,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+
+  botaoVenderTexto: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
+
+  priceText: {
+    color: '#FFFFFF',
+    fontWeight: '700',
+    fontSize: 16,
+  },
+});
