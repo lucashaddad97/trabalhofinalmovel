@@ -23,7 +23,7 @@ function Depositar() {
         useCallback(() => { carregarSaldo(); }, [])
     );
 
-    // ⭐ AQUI ESTÁ A FUNÇÃO DO JEITO QUE VOCÊ PEDIU ⭐
+    
     function confirmarDeposito() {
         const deposito = parseFloat(valor);
 
@@ -107,32 +107,32 @@ function Sacar() {
         useCallback(() => { carregarSaldo(); }, [])
     );
 
-    // ⭐ MESMO PADRÃO DO CONFIRMAR DEPÓSITO ⭐
+   
     function confirmarSaque() {
         const saque = parseFloat(valor);
 
-        // ❌ Valor inválido
+ 
         if (isNaN(saque) || saque <= 0) {
             Alert.alert('Erro', 'Digite um valor válido.');
             setValor('');
             return;
         }
 
-        // ❌ Saque maior que saldo
+   
         if (saque > saldo) {
             Alert.alert('Erro', 'Não é possível sacar mais do que o saldo disponível.');
             setValor('');
             return;
         }
 
-        // 🌐 WEB — usa window.confirm
+  
         if (Platform.OS === 'web') {
             const ok = window.confirm(`Deseja realmente sacar R$${saque.toFixed(2)}?`);
             if (ok) executarSaque(saque);
             return;
         }
 
-        // 📱 MOBILE — usa Alert de confirmação
+     
         Alert.alert(
             'Confirmar Saque',
             `Deseja realmente sacar R$${saque.toFixed(2)}?`,
