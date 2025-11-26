@@ -7,10 +7,9 @@ import {
     Image,
     Platform,
     ScrollView,
-    StyleSheet,
     Text,
     TouchableOpacity,
-    View,
+    View
 } from 'react-native';
 
 function formatCurrency(value) {
@@ -112,3 +111,47 @@ export default function SimulacaoHoje() {
       </View>
     );
   }
+
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.saldoBox}>
+        <Text style={styles.saldoTexto}>💰 {formatCurrency(saldo)}</Text>
+        <Text style={styles.investidoTexto}>📊 Investido: {formatCurrency(totalInvestido)}</Text>
+        <Text style={styles.investidoTexto}>💵 Disponível: {formatCurrency(saldo)}</Text>
+      </View>
+
+      <Text style={styles.titulo}>Minha Carteira</Text>
+
+      {carteira.length === 0 && <Text style={styles.vazio}>Nenhuma ação comprada.</Text>}
+
+      {carteira.map((item, i) => {
+        const variacao = Number(item.changePercent || 0);
+        const cor = variacao >= 0 ? '#4CAF50' : '#FF5252';
+        return (
+          <View key={`${item.ticker}-${i}`} style={styles.card}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              {item.logoUrl ? <Image source={{ uri: item.logoUrl }} style={styles.logo} /> : null}
+              <View style={{ flex: 1 }}>
+                <Text style={styles.nome}>{item.nome}</Text>
+                <Text style={styles.texto}>Código: {item.ticker}</Text>
+              </View>
+              <View style={{ alignItems: 'flex-end' }}>
+                <Text style={[styles.priceText]}>{formatCurrency(item.cotacaoAtual)}</Text>
+                <Text style={{ color: cor, fontWeight: '600' }}>{variacao >= 0 ? '▲' : '▼'} {variacao.toFixed(2)}%</Text>
+              </View>
+            </View>
+
+            <Text style={styles.texto}>Quantidade: {Number(item.quantidade).toFixed(4)}</Text>
+            <Text style={styles.texto}>Investido: {formatCurrency(item.investimento)}</Text>
+
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 10 }}>
+              <TouchableOpacity style={styles.botaoVender} onPress={() => venderAcao(i)} activeOpacity={0.8}>
+                <Text style={styles.botaoVenderTexto}>Vender</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        );
+      })}
+    </ScrollView>
+  );
+}
